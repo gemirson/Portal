@@ -1,0 +1,12 @@
+{
+  "name": "Portal",
+  "version": "1.0.0",
+  "description": "Sistema Escolar",
+  "main": "index.js",
+  "repository": "https://github.com/gemirson/Portal.git",
+  "author": "Gemirson <gemirson.silva@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "standard": "^14.3.4"
+  }
+}
