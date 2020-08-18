@@ -43,16 +43,40 @@ const students = [
 async function index() {
   console.table(users);
 }
-async function create(id, name, gender, born, team, course) {
-  students.push({
+
+async function Validate(id, name, gender, born, team, course) {
+  if (id === "" || name === "" || gender === "" || team === "") {
+    return "invalid parameters";
+  }
+  return {
     id: id,
-    name: name,
-    gender: gender,
+    name: name.toUpperCase(),
+    gender: gendertoUpperCase(),
     born: born,
-    team: team,
-    course: course,
+    team: team.toUpperCase(),
+    course: course.toUpperCase(),
     createdAt: new Date().toLocaleDateString()
-  });
+  };
+}
+async function create(id, name, gender, born, team, course) {
+  const student = Validate(
+    id,
+    name,
+    gender,
+    born,
+    team,
+    courseid,
+    name,
+    gender,
+    born,
+    team,
+    course
+  );
+  if (student === "invalid parameters") {
+    return "failers insert new student";
+  }
+  students.push(student);
+  return "success insert user";
 }
 async function findByPk(id) {
   const student = students.find((currentValue, index, arr) => {
