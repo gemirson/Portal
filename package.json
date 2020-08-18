@@ -6,6 +6,19 @@
   "repository": "https://github.com/gemirson/Portal.git",
   "author": "Gemirson <gemirson.silva@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "start": "node src/main/index.js",
+    "test": "jest  --colors  --passWithNoTests --forceExit  --runInBand --detectOpenHandles",
+    "test:unit": "jest --colors  --runInBand --passWithNoTests -c jest-unit-config.js --forceExit",
+    "test:integration": "jest --colors   --runInBand --passWithNoTests  -c jest-integration-config.js --forceExit",
+    "test:staged": "jest --colors --runInBand --detectOpenHandles  --passWithNoTests --forceExit ",
+    "test:ci": "jest  --coverage --colors --noStackTrace --passWithNoTests --runInBand --forceExit"
+  },
+  "standard": {
+    "env": [
+      "jest"
+    ]
+  },
   "dependencies": {
     "standard": "^14.3.4"
   },
